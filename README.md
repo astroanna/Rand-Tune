@@ -1,6 +1,7 @@
 # Rand-Tune
 
 Lucid Chart Documents:
+
 Class Hierarchy https://www.lucidchart.com/invitations/accept/c7f5bb9c-26fe-43f1-b0ba-cad04affb2d5
 Class Diagram
 Swim Lane (Random Song) https://www.lucidchart.com/invitations/accept/d5199eaf-8ecc-489b-9b43-6d3b9506fb2e
