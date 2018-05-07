@@ -6,12 +6,13 @@ var bodyParser = require("body-parser");
 var SongModel_1 = require("./model/SongModel");
 // Creates and configures an ExpressJS web server.
 var App = /** @class */ (function () {
+    //public idGenerator:number;
     //Run configuration methods on the Express instance.
     function App() {
         this.expressApp = express();
         this.middleware();
         this.routes();
-        this.idGenerator = 100;
+        //this.idGenerator = 100;
         //this.Lists = new ListModel();
         //this.Tasks = new TaskModel();
         this.Songs = new SongModel_1.SongModel();
@@ -29,6 +30,11 @@ var App = /** @class */ (function () {
         router.get('/songs', function (req, res) {
             console.log('Query all songs in db');
             _this.Songs.retrieveAllSongs(res);
+        });
+        router.get('/musician/:target/songs', function (req, res) {
+            var target = req.params.target;
+            console.log("Query all songs by: " + target);
+            _this.Songs.retrieveAllSongsForMusician(res, { musician: target });
         });
         /*router.post('/app/list/', (req, res) => {
             console.log(req.body);

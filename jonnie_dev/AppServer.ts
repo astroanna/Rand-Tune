@@ -6,6 +6,8 @@ import * as url from 'url';
 import * as bodyParser from 'body-parser';
 import {App} from './App';
 
+let port: number = 8080;
+
 let server: any = new App().expressApp;
-console.log("server started...");
-server.listen(8080);
+console.log("Express server started on port: " + port);
+server.listen(port);

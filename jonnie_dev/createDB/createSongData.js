@@ -10,7 +10,7 @@ songCollection.insert(
     album: "test_musician1's album",
     genre: "electronic",
     review_count: 100,
-    raw_data: "some mp3 data here"
+    path: "some mp3 data here"
 }
 )
 songCollection.insert(
@@ -21,7 +21,7 @@ songCollection.insert(
     album: "test_musician1's album",
     genre: "electronic",
     review_count: 100,
-    raw_data: "some mp3 data here"
+    path: "some mp3 data here"
 }
 )
 songCollection.insert(
@@ -32,17 +32,29 @@ songCollection.insert(
     album: "test_musician2's album",
     genre: "rock",
     review_count: 100,
-    raw_data: "some mp3 data here"
+    path: "some mp3 data here"
 }
 )
 songCollection.insert(
 {
     title: "test_song4",
-    description: "this is the description for test_song3",
+    description: "this is the description for test_song4",
     musician: "test_musician2",
     album: "test_musician2's album",
     genre: "rock",
     review_count: 100,
-    raw_data: "some mp3 data here"
+    path: "some mp3 data here"
 }
 )
+songCollection.insert(
+    {
+        title: "test_song5",
+        description: "this is the description for test_song5",
+        musician: "test_musician3",
+        album: "",
+        genre: "punk",
+        review_count: 100,
+        path: "some mp3 data here"
+    }
+    )
+    

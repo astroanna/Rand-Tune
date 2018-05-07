@@ -20,14 +20,14 @@ class App {
   //public Lists:ListModel;
   //public Tasks:TaskModel;
   public Songs:SongModel;
-  public idGenerator:number;
+  //public idGenerator:number;
 
   //Run configuration methods on the Express instance.
   constructor() {
     this.expressApp = express();
     this.middleware();
     this.routes();
-    this.idGenerator = 100;
+    //this.idGenerator = 100;
     //this.Lists = new ListModel();
     //this.Tasks = new TaskModel();
     this.Songs = new SongModel();
@@ -49,6 +49,12 @@ class App {
         console.log('Query all songs in db');
         this.Songs.retrieveAllSongs(res);
     });
+
+    router.get('/musician/:target/songs',(req,res) =>{
+        var target = req.params.target;
+        console.log("Query all songs by: " + target);
+        this.Songs.retrieveAllSongsForMusician(res, {musician: target});
+    })
 
     /*router.post('/app/list/', (req, res) => {
         console.log(req.body);

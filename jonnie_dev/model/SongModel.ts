@@ -23,7 +23,7 @@ class SongModel {
                 album: String,
                 genre: String,
                 review_count: Number,
-                raw_data: String,
+                path: String,
             }, {collection: 'songs'}
         );
     }
@@ -35,6 +35,13 @@ class SongModel {
     public retrieveAllSongs(response:any) {
         var query = this.model.find({});
         query.exec( (err, itemArray) => {
+            response.json(itemArray);
+        });
+    }
+
+    public retrieveAllSongsForMusician(response:any, filter:Object){
+        var query = this.model.find(filter);
+        query.exec((err,itemArray)=> {
             response.json(itemArray);
         });
     }

@@ -7,6 +7,6 @@ interface ISongModel extends Mongoose.Document {
     album: string;
     genre: string;
     review_count: number;
-    raw_data: undefined;
+    path: string;
 }
 export {ISongModel};

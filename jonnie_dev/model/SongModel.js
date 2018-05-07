@@ -17,7 +17,7 @@ var SongModel = /** @class */ (function () {
             album: String,
             genre: String,
             review_count: Number,
-            raw_data: String
+            path: String
         }, { collection: 'songs' });
     };
     SongModel.prototype.createModel = function () {
@@ -25,6 +25,12 @@ var SongModel = /** @class */ (function () {
     };
     SongModel.prototype.retrieveAllSongs = function (response) {
         var query = this.model.find({});
+        query.exec(function (err, itemArray) {
+            response.json(itemArray);
+        });
+    };
+    SongModel.prototype.retrieveAllSongsForMusician = function (response, filter) {
+        var query = this.model.find(filter);
         query.exec(function (err, itemArray) {
             response.json(itemArray);
         });
