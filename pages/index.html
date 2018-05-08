@@ -15,19 +15,18 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto|Shrikhand" rel="stylesheet">
-    
-    <link rel="stylesheet" href="index.css" >
+
+    <link rel="stylesheet" href="index.css">
 
   </head>
 
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-dark bg-secondary fixed-top nav-pills bg-dark">
+    <nav class="navbar bg-secondary fixed-top nav-pills bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <div style="font-size: 2.5rem;
-          color: purple;
           font-family: 'Monoton', cursive;
           text-decoration: none;" class="logo">Rand()Tune</div>
 		    </a>
@@ -45,20 +44,27 @@
               <a class="dropdown-item" href="#">Artists</a>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Upload</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Music</a>
-              <a class="dropdown-item" href="#">Artwork</a>
-            </div>
-          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Upload</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Music</a>
+            <a class="dropdown-item" href="#">Artwork</a>
+          </div>
+        </li>
         </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item">
-              <a class="nav-link text-white dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user text-white"></span>Login</a>
+          <ul class="nav nav-pills navbar-right">
+            <!--<li class="nav-item">
+              <a class="nav-link text-dark dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user text-dark"></span>Login</a>
               <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">My Profile</a>
                 <a class="dropdown-item" href="#">Artwork</a>
+              </div>
+          </li>-->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">My Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
               </div>
             </li>
           </ul>
@@ -117,9 +123,9 @@
         </div>
 
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
+        <div class="sidebar col-md-4">
 
-          <!-- Search Widget -->
+          <!-- Search Widget DELETE
           <div class="card my-4">
             <h5 class="card-header">Search</h5>
             <div class="card-body">
@@ -130,36 +136,27 @@
                 </span>
               </div>
             </div>
-          </div>
+        </div> -->
 
           <!-- Categories Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Categories</h5>
+            <h5 class="card-header">Musician Name</h5>
             <div class="card-body">
+              <div class="musician-image">
+                  <img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="200" height="200" padding="100px">
+                  </img>
+              </div>
               <div class="row">
                 <div class="col-lg-6">
                   <ul class="list-unstyled mb-0">
                     <li>
-                      <a href="#">Web Design</a>
+                      <a href="#">Website</a>
                     </li>
                     <li>
-                      <a href="#">HTML</a>
+                      <a href="#">Facebook</a>
                     </li>
                     <li>
-                      <a href="#">Freebies</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">JavaScript</a>
-                    </li>
-                    <li>
-                      <a href="#">CSS</a>
-                    </li>
-                    <li>
-                      <a href="#">Tutorials</a>
+                      <a href="#">Twitter</a>
                     </li>
                   </ul>
                 </div>
@@ -167,13 +164,13 @@
             </div>
           </div>
 
-          <!-- Side Widget -->
+          <!-- Side Widget
           <div class="card my-4">
             <h5 class="card-header">Side Widget</h5>
             <div class="card-body">
               You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
             </div>
-          </div>
+        </div>-->
 
         </div>
 

@@ -2,7 +2,17 @@ body {
   padding-top: 60px;
 }
 
+.navbar-brand {
+    color: purple;
+}
 
+.sidebar {
+    padding-top: 60px;
+}
+
+.musician-image {
+    padding: 100px;
+}
 
 @media (min-width: 992px) {
   body {
