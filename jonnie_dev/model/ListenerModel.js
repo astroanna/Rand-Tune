@@ -14,6 +14,7 @@ var ListenerModel = /** @class */ (function () {
             _id: String,
             username: String,
             password: String,
+            bio: String,
             f_name: String,
             l_name: String,
             email: String,

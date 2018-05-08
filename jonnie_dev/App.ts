@@ -77,6 +77,11 @@ class App {
         this.Reviews.retrieveReviewsForID(res, {user_id: target});
     });
 
+    router.get('/music/:artist/:song',(req, res) => {
+        var artist = req.params.artist;
+        var song = req.params.song;
+        res.send(req);
+    })
 
     /*router.post('/app/list/', (req, res) => {
         console.log(req.body);

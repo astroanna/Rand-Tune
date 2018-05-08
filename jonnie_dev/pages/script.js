@@ -1,48 +1,54 @@
 function initXHR(x, value) {
-	console.log(x); 
-	if (x == 'home') {
-		document.getElementById("home").style.display = "block";
-		document.getElementById("lists").style.display = "none";
-		document.getElementById("gList").style.display = "none";
+	console.log(x);
+	if (x == 'songs') {
+		//retrieveActiveListsFromServer('/app/songs', 'songs');
+		retrieveSongFromServer('/newsong')
+ 		document.getElementById("songs").style.display = "block";
+		document.getElementById("user").style.display = "none";
 	}
-	else if (x == 'lists') {
-		//		retrieveActiveListsFromServer('/app/json/lists.json');
-		retrieveActiveListsFromServer('/app/list/', 'lists');
-		document.getElementById("home").style.display = "none";
-		document.getElementById("lists").style.display = "block";
-		document.getElementById("gList").style.display = "none";		
-	}
-	else if (x == 'gList') {
-		retrieveActiveListsFromServer('/app/list/' + value, 'gList');
-		document.getElementById("home").style.display = "none";
-		document.getElementById("lists").style.display = "none";
-		document.getElementById("gList").style.display = "block";
+ 	else if (x == 'user') {
+		//retrieveActiveListsFromServer('/app/user', 'user');
+ 		document.getElementById("songs").style.display = "none";
+		document.getElementById("user").style.display = "block";
 	}
 	else {
-		document.getElementById("home").style.display = "block";
-		document.getElementById("lists").style.display = "none";
-		document.getElementById("gList").style.display = "none";
+		document.getElementById("songs").style.display = "block";
+		document.getElementById("user").style.display = "none";
 	}
 }
 
-function retrieveActiveListsFromServer(url, operation) {
+function retrieveSongFromServer(url) {
 	var xmlhttp = new XMLHttpRequest();
 
 	xmlhttp.onreadystatechange = function() {
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			var returnValues = JSON.parse(xmlhttp.responseText);
-			if (operation == "lists") {
-				populateListsView('lists', returnValues);
-			}
-			else if (operation == "gList") {
-				populateListItems('tasks', returnValues);				
-			}
+			console.log(returnValues);
+			populateSongItems(returnValues);
 		}
 	}
 	xmlhttp.open("GET", url, true);
 	xmlhttp.send();
 }
 
+// function retrieveUserFromServer(url, operation) {
+// 	var xmlhttp = new XMLHttpRequest();
+
+// 	xmlhttp.onreadystatechange = function() {
+// 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+// 			var returnValues = JSON.parse(xmlhttp.responseText);
+// 			populateSongViews('users', returnValues);
+// 		}
+// 	}
+// 	xmlhttp.open("GET", url, true);
+// 	xmlhttp.send();
+// }
+
+
+
+
+
+/*
 //DOM based function
 function populateListsView(elementId, lists) {
 	var element = document.getElementById(elementId);
@@ -88,26 +94,46 @@ function populateListItems2(elementId, list) {
 		newElement += "</tr>";
 	}
 
-	element.innerHTML = newElement;	
-}
+	element.innerHTML = newElement;
+}*/
 
 //JQuery based function
-function populateListItems(elementId, list) {
-	var listItems = list.tasks;
-	var newElement = "";
+// function populateUserItems(elementId, list) {
+// 	var listItems = list.tasks;
+// 	var newElement = "";
 
-	for (var i = 0; i < listItems.length; i++) {
-		newElement += "<tr>";
-		newElement += "<td>" + listItems[i].description + "</td>";
-		newElement += "<td><span class=\"badge\">" + listItems[i].shared + "</span></td>";
-		newElement += "<td>";
-		newElement += "<div class=\"input-group\">";
-		newElement += "<span class=\"input-group-addon\" style=\"border-style:none;\">";
-		newElement += "<input type=\"checkbox\">";
-		newElement += "</span>";
-		newElement += "</div>";
-		newElement += "</td>";
-		newElement += "</tr>";
-	}
-	$("#" + elementId).append(newElement);
+// 	for (var i = 0; i < listItems.length; i++) {
+// 		newElement += "<tr>";
+// 		newElement += "<td>" + listItems[i].description + "</td>";
+// 		newElement += "<td><span class=\"badge\">" + listItems[i].shared + "</span></td>";
+// 		newElement += "<td>";
+// 		newElement += "<div class=\"input-group\">";
+// 		newElement += "<span class=\"input-group-addon\" style=\"border-style:none;\">";
+// 		newElement += "<input type=\"checkbox\">";
+// 		newElement += "</span>";
+// 		newElement += "</div>";
+// 		newElement += "</td>";
+// 		newElement += "</tr>";
+// 	}
+// 	$("#" + elementId).append(newElement);
+// }
+
+function populateSongItems(song) {
+	var songTitle = document.getElementById('song-title');
+	console.log( song[0].title);
+	songTitle.innerHTML = song[0].title;
+
+	var songArtist = document.getElementById('song-artist');
+	songArtist.innerHTML = song[0].musician;
+
+	var songDesc = document.getElementById('song-desc');
+	songDesc.innerHTML = song[0].description;
+
+	var songAlbum = document.getElementById('song-album');
+	songAlbum.innerHTML = song[0].album;
+
+	//var oggSong = document.getElementById('ogg-src');
+	//oggSong.src = song.path;
+	var mp3Src = document.getElementById('mp3-src');
+	mp3Src.src = '/music/musician1@gmail.com/test_song1.mp3';
 }

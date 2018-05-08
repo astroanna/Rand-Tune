@@ -4,6 +4,7 @@ interface IListenerModel extends Mongoose.Document {
     _id: string;
     username: string;
     password: string;
+    bio: string;
     f_name: string;
     l_name: string;
     email: string;
