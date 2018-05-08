@@ -4,8 +4,6 @@ import * as logger from 'morgan';
 import * as mongodb from 'mongodb';
 import * as url from 'url';
 import * as bodyParser from 'body-parser';
-//var MongoClient = require('mongodb').MongoClient;
-//var Q = require('q');
 
 //import {ListModel} from './model/ListModel';
 //import {TaskModel} from './model/TaskModel';
@@ -56,23 +54,24 @@ class App {
         this.Songs.retrieveAllSongs(res);
     });
 
-    router.get('/musician/:target/songs',(req,res) =>{
+    router.get('/users/:target/songs',(req,res) =>{
         var target = req.params.target;
         console.log("Query all songs by: " + target);
         this.Songs.retrieveAllSongsForMusician(res, {musician: target});
-    })
+    });
 
     router.get('/users/:target',(req,res) => {
         var target = req.params.target;
         console.log("Query user info for: " + target);
         this.Listener.retrieveListener(res, {email: target});
-    })
+    });
 
     router.get('/users/:target/reviews',(req,res) => {
         var target = req.params.target;
         console.log("Query all review for user: " + target);
-        var _id = this.Listener.retrieveListener
-    })
+        this.Reviews.retrieveReviewsForID(res, {user_id: target});
+    });
+
 
     /*router.post('/app/list/', (req, res) => {
         console.log(req.body);
@@ -100,8 +99,8 @@ class App {
 */
     this.expressApp.use('/', router);
 
-    this.expressApp.use('/app/json/', express.static(__dirname+'/app/json'));
-    this.expressApp.use('/images', express.static(__dirname+'/img'));
+    //this.expressApp.use('/app/json/', express.static(__dirname+'/app/json'));
+    //this.expressApp.use('/images', express.static(__dirname+'/img'));
     this.expressApp.use('/', express.static(__dirname+'/pages'));
     
   }

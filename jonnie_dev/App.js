@@ -5,6 +5,7 @@ var logger = require("morgan");
 var bodyParser = require("body-parser");
 var SongModel_1 = require("./model/SongModel");
 var ListenerModel_1 = require("./model/ListenerModel");
+var ReviewModel_1 = require("./model/ReviewModel");
 // Creates and configures an ExpressJS web server.
 var App = /** @class */ (function () {
     //public idGenerator:number;
@@ -18,6 +19,7 @@ var App = /** @class */ (function () {
         //this.Tasks = new TaskModel();
         this.Songs = new SongModel_1.SongModel();
         this.Listener = new ListenerModel_1.ListenerModel();
+        this.Reviews = new ReviewModel_1.ReviewModel();
     }
     // Configure Express middleware.
     App.prototype.middleware = function () {
@@ -33,7 +35,7 @@ var App = /** @class */ (function () {
             console.log('Query all songs in db');
             _this.Songs.retrieveAllSongs(res);
         });
-        router.get('/musician/:target/songs', function (req, res) {
+        router.get('/users/:target/songs', function (req, res) {
             var target = req.params.target;
             console.log("Query all songs by: " + target);
             _this.Songs.retrieveAllSongsForMusician(res, { musician: target });
@@ -42,6 +44,11 @@ var App = /** @class */ (function () {
             var target = req.params.target;
             console.log("Query user info for: " + target);
             _this.Listener.retrieveListener(res, { email: target });
+        });
+        router.get('/users/:target/reviews', function (req, res) {
+            var target = req.params.target;
+            console.log("Query all review for user: " + target);
+            _this.Reviews.retrieveReviewsForID(res, { user_id: target });
         });
         /*router.post('/app/list/', (req, res) => {
             console.log(req.body);
@@ -68,8 +75,8 @@ var App = /** @class */ (function () {
         });
     */
         this.expressApp.use('/', router);
-        this.expressApp.use('/app/json/', express.static(__dirname + '/app/json'));
-        this.expressApp.use('/images', express.static(__dirname + '/img'));
+        //this.expressApp.use('/app/json/', express.static(__dirname+'/app/json'));
+        //this.expressApp.use('/images', express.static(__dirname+'/img'));
         this.expressApp.use('/', express.static(__dirname + '/pages'));
     };
     return App;

@@ -9,5 +9,5 @@ import {App} from './App';
 let port: number = 8080;
 
 let server: any = new App().expressApp;
-console.log("Express server started on port: " + port);
-server.listen(port);
+console.log("server starting on port: " + port);
+server.listen(port, () => console.log("server listening on port: " + port));

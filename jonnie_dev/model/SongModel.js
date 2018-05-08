@@ -21,7 +21,7 @@ var SongModel = /** @class */ (function () {
         }, { collection: 'songs' });
     };
     SongModel.prototype.createModel = function () {
-        this.model = mongooseConnection.model("Songs", this.schema);
+        this.model = mongooseConnection.model("Song", this.schema);
     };
     SongModel.prototype.retrieveAllSongs = function (response) {
         var query = this.model.find({});

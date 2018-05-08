@@ -1,6 +1,7 @@
 import Mongoose = require("mongoose");
 
 interface IListenerModel extends Mongoose.Document {
+    _id: string;
     username: string;
     password: string;
     f_name: string;
@@ -12,8 +13,5 @@ interface IListenerModel extends Mongoose.Document {
     balance: number;
     is_musician: boolean;
     is_artist: boolean;
-    song_list: [{
-        id: string;
-    }];
 }
 export {IListenerModel};

@@ -42,7 +42,7 @@ songCollection.insert(
         album: "test_musician1's album",
         genre: "electronic",
         review_count: 100,
-        path: "some mp3 data here"
+        path: "/music/musician1@gmail.com/test_song1.mp3"
     }
 )
 songCollection.insert(
@@ -54,7 +54,7 @@ songCollection.insert(
         album: "test_musician1's album",
         genre: "electronic",
         review_count: 100,
-        path: "some mp3 data here"
+        path: "/music/musician1@gmail.com/test_song2.mp3"
     }
 )
 songCollection.insert(
@@ -66,7 +66,7 @@ songCollection.insert(
         album: "test_musician1's album",
         genre: "rock",
         review_count: 100,
-        path: "some mp3 data here"
+        path: "/music/musician1@gmail.com/test_song3.mp3"
     }
 )
 songCollection.insert(
@@ -78,7 +78,7 @@ songCollection.insert(
         album: "test_musician1's album",
         genre: "rock",
         review_count: 100,
-        path: "some mp3 data here"
+        path: "/music/musician1@gmail.com/test_song4.mp3"
     }
 )
 songCollection.insert(
@@ -90,7 +90,7 @@ songCollection.insert(
         album: "",
         genre: "punk",
         review_count: 100,
-        path: "some mp3 data here"
+        path: "/music/musician1@gmail.com/test_song5.mp3"
     }
 )
 listenerCollection.insert(
@@ -118,7 +118,7 @@ songCollection.insert(
         album: "Hello World",
         genre: "electronic",
         review_count: 100,
-        path: "some mp3 data here"
+        path: "/music/alexajaide@gmail.com/waterfall.mp3"
     }
 )
 songCollection.insert(
@@ -130,7 +130,7 @@ songCollection.insert(
         album: "Hello World",
         genre: "electronic",
         review_count: 100,
-        path: "some mp3 data here"
+        path: "/music/alexajaide@gmail.com/around_the_world.mp3"
     }
 )
 
@@ -162,7 +162,6 @@ reviewCollection.insert(
         rating: 5
     }
 )
-song_id = songCollection.find({title: "test_song2"})
 reviewCollection.insert(
     {
         user_id: "bob@test.com",

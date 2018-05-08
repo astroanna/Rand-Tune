@@ -11,6 +11,7 @@ var ListenerModel = /** @class */ (function () {
     }
     ListenerModel.prototype.createSchema = function () {
         this.schema = new Mongoose.Schema({
+            _id: String,
             username: String,
             password: String,
             f_name: String,
@@ -30,7 +31,7 @@ var ListenerModel = /** @class */ (function () {
     ListenerModel.prototype.retrieveListener = function (response, filter) {
         var query = this.model.find(filter);
         query.exec(function (err, itemArray) {
-            response.json(itemArray);
+            response.json(itemArray)._id;
         });
     };
     return ListenerModel;

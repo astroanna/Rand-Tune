@@ -17,6 +17,7 @@ class ListenerModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
+                _id: String,
                 username: String,
                 password: String,
                 f_name: String,

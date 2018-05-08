@@ -1,94 +1,199 @@
-<html>
-	<head> 
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<!DOCTYPE html>
+<html lang="en">
 
-		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-	</head>
-	</head>
-	<body onload="initXHR('home', null)">
-		<div class="container">
+  <head>
 
-		  <!-- Static navbar -->
-		  <nav class="navbar navbar-default">
-			<div class="container-fluid">
-			  <div class="navbar-header">
-				<a class="navbar-brand" href="javascript:initXHR('home', null)">To Do</a>
-			  </div>
-			  <div id="navbar" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-				  <li><a href="#">Home</a></li>
-				  <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">List<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-					  <li><a href="#">Create</a></li>
-					  <li><a href="javascript:initXHR('lists', null)">Active</a></li>
-					  <li><a href="#">Disabled</a></li>
-					</ul>
-				  </li>
-				  <li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shared<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-					  <li><a href="#">Active</a></li>
-					  <li><a href="#">Pending</a></li>
-					</ul>
-				  </li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-				  <li><a href="#">Login</a></li>
-				</ul>
-			  </div><!--/.nav-collapse -->
-			</div><!--/.container-fluid -->
-		  </nav>
-		  
-		<div id="home">
-		  <!-- Main component for a primary marketing message or call to action -->
-		  <div class="jumbotron">
-			<h1>To Do List</h1>
-			<p>Keep track of all of things you need to do by creating lists and sharing items with friends.</p>
-			<p>
-			  <a class="btn btn-lg btn-primary" href="javascript:initXHR('lists', null)" role="button">View</a>
-			</p>
-		  </div>
-		</div>
-		
-		<div id="lists" style="display:none;">
-		</div>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		<div id="gList" style="display:none;">
-			<div class="panel panel-default">
-			  <!-- Default panel contents -->
-			  <div class="panel-heading"> 
-				  <h3>List</h3>
-				  <div>
-					<a href="#"><span class="glyphicon glyphicon-edit"></span></a>
-					<a href="#"><span class="glyphicon glyphicon-trash"></span></a>
-					<a href="#"><span class="glyphicon glyphicon-ok"></span></a>
-				  </div>
-			  </div>
-				<!-- Table -->
-				<table class="table" style="font-size:10pt;">
-					<thead>
-						<tr>
-							<th>Items</th>
-							<th width="5%">Shared</th>
-							<th width="5%">Status</th>
-						</tr>
-					</thead>
-					<tbody id='tasks'>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		
-		</div> <!-- /container -->
-	
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="/script.js"></script>
-	</body>
+    <title>Rand()Tune - New Song</title>
+
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Roboto|Shrikhand" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar bg-secondary fixed-top nav-pills bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <div style="font-size: 2.5rem;
+          font-family: 'Monoton', cursive;
+          text-decoration: none;" class="logo">Rand()Tune</div>
+		    </a>
+        <ul class="nav nav-pills text-white">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">New Song</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Explore</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Musicians</a>
+              <a class="dropdown-item" href="#">Artists</a>
+            </div>
+          </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Upload</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Music</a>
+            <a class="dropdown-item" href="#">Artwork</a>
+          </div>
+        </li>
+        </ul>
+          <ul class="nav nav-pills navbar-right">
+            <!--<li class="nav-item">
+              <a class="nav-link text-dark dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user text-dark"></span>Login</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">My Profile</a>
+                <a class="dropdown-item" href="#">Artwork</a>
+              </div>
+          </li>-->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">My Profile</a>
+                <a class="dropdown-item" href="#">Settings</a>
+              </div>
+            </li>
+          </ul>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+          <h1 class="my-4">New Song</h1>
+          <h2>Listen to something new, and tell the artist what you think!</h2>
+
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">Post Title</h2>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on January 1, 2017 by
+              <a href="#">Start Bootstrap</a>
+            </div>
+          </div>
+
+          <!-- Blog Post -->
+          <div class="card mb-4">
+            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">Post Title</h2>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+              <a href="#" class="btn btn-primary">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Posted on January 1, 2017 by
+              <a href="#">Start Bootstrap</a>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <ul class="pagination justify-content-center mb-4">
+            <li class="page-item">
+              <a class="page-link" href="#">&larr; Older</a>
+            </li>
+            <li class="page-item disabled">
+              <a class="page-link" href="#">Newer &rarr;</a>
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- Sidebar Widgets Column -->
+        <div class="sidebar col-md-4">
+
+          <!-- Search Widget DELETE
+          <div class="card my-4">
+            <h5 class="card-header">Search</h5>
+            <div class="card-body">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button">Go!</button>
+                </span>
+              </div>
+            </div>
+        </div> -->
+
+          <!-- Categories Widget -->
+          <div class="card my-4">
+            <h5 class="card-header">Musician Name</h5>
+            <div class="card-body">
+              <div class="musician-image">
+                  <img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" width="200" height="200" padding="100px">
+                  </img>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="list-unstyled mb-0">
+                    <li>
+                      <a href="#">Website</a>
+                    </li>
+                    <li>
+                      <a href="#">Facebook</a>
+                    </li>
+                    <li>
+                      <a href="#">Twitter</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Widget
+          <div class="card my-4">
+            <h5 class="card-header">Side Widget</h5>
+            <div class="card-body">
+              You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+            </div>
+        </div>-->
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Rand()Tune 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+   <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  </body>
+
 </html>
