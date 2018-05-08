@@ -29,7 +29,7 @@ class SongModel {
     }
 
     public createModel(): void {
-        this.model = mongooseConnection.model<ISongModel>("Songs", this.schema);
+        this.model = mongooseConnection.model<ISongModel>("Song", this.schema);
     }
 
     public retrieveAllSongs(response:any) {

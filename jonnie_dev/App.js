@@ -4,6 +4,7 @@ var express = require("express");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
 var SongModel_1 = require("./model/SongModel");
+var ListenerModel_1 = require("./model/ListenerModel");
 // Creates and configures an ExpressJS web server.
 var App = /** @class */ (function () {
     //public idGenerator:number;
@@ -16,6 +17,7 @@ var App = /** @class */ (function () {
         //this.Lists = new ListModel();
         //this.Tasks = new TaskModel();
         this.Songs = new SongModel_1.SongModel();
+        this.Listener = new ListenerModel_1.ListenerModel();
     }
     // Configure Express middleware.
     App.prototype.middleware = function () {
@@ -35,6 +37,11 @@ var App = /** @class */ (function () {
             var target = req.params.target;
             console.log("Query all songs by: " + target);
             _this.Songs.retrieveAllSongsForMusician(res, { musician: target });
+        });
+        router.get('/users/:target', function (req, res) {
+            var target = req.params.target;
+            console.log("Query user info for: " + target);
+            _this.Listener.retrieveListener(res, { email: target });
         });
         /*router.post('/app/list/', (req, res) => {
             console.log(req.body);

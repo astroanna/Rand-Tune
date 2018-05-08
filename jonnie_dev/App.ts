@@ -11,6 +11,8 @@ import * as bodyParser from 'body-parser';
 //import {TaskModel} from './model/TaskModel';
 import {DataAccess} from './DataAccess';
 import {SongModel} from './model/SongModel';
+import {ListenerModel} from './model/ListenerModel';
+import { ReviewModel } from './model/ReviewModel';
 
 // Creates and configures an ExpressJS web server.
 class App {
@@ -20,6 +22,8 @@ class App {
   //public Lists:ListModel;
   //public Tasks:TaskModel;
   public Songs:SongModel;
+  public Listener:ListenerModel;
+  public Reviews:ReviewModel;
   //public idGenerator:number;
 
   //Run configuration methods on the Express instance.
@@ -31,6 +35,8 @@ class App {
     //this.Lists = new ListModel();
     //this.Tasks = new TaskModel();
     this.Songs = new SongModel();
+    this.Listener = new ListenerModel();
+    this.Reviews = new ReviewModel();
   }
 
   // Configure Express middleware.
@@ -54,6 +60,12 @@ class App {
         var target = req.params.target;
         console.log("Query all songs by: " + target);
         this.Songs.retrieveAllSongsForMusician(res, {musician: target});
+    })
+
+    router.get('/users/:target',(req,res) => {
+        var target = req.params.target;
+        console.log("Query user info for: " + target);
+        this.Listener.retrieveListener(res, {email: target});
     })
 
     /*router.post('/app/list/', (req, res) => {
