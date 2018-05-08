@@ -1,3 +1,7 @@
+.user-info {
+	padding-top: 60px;
+}
+
 body {
   padding-top: 60px;
 }
@@ -10,12 +14,18 @@ body {
     padding-top: 60px;
 }
 
-.musician-image {
-    padding: 100px;
-}
-
-@media (min-width: 992px) {
+ @media (min-width: 992px) {
   body {
     padding-top: 60px;
   }
+}
+
+.musician-image {
+	width: auto;
+	height: auto;
+	position: relative;
+}
+
+.user-profile {
+	padding-top: 60px;
 }
