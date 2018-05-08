@@ -68,6 +68,12 @@ class App {
         this.Listener.retrieveListener(res, {email: target});
     })
 
+    router.get('/users/:target/reviews',(req,res) => {
+        var target = req.params.target;
+        console.log("Query all review for user: " + target);
+        var _id = this.Listener.retrieveListener
+    })
+
     /*router.post('/app/list/', (req, res) => {
         console.log(req.body);
         var jsonObj = req.body;
