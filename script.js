@@ -134,4 +134,7 @@ function populateSongItems(song) {
 	//oggSong.src = song.path;
 	var mp3Src = document.getElementById('mp3-src');
 	mp3Src.src = song.path;
+	
+	var audio = document.getElementById('player');
+	audio.load();
 }
