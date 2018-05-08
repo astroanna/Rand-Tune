@@ -17,6 +17,7 @@ class SongModel {
     public createSchema(): void {
         this.schema = new Mongoose.Schema(
             {
+                _id: Number,
                 title: String,
                 description: String,
                 musician: String,
@@ -30,6 +31,14 @@ class SongModel {
 
     public createModel(): void {
         this.model = mongooseConnection.model<ISongModel>("Song", this.schema);
+    }
+
+    public retrieveRandom(res:any) {
+        var rand = Math.floor(Math.random() * 7) +1;
+        var query = this.model.find({_id : rand});
+        query.exec((err,item)=> {
+            res.json(item);
+        });
     }
 
     public retrieveAllSongs(response:any) {

@@ -35,6 +35,10 @@ var App = /** @class */ (function () {
             console.log('Query all songs in db');
             _this.Songs.retrieveAllSongs(res);
         });
+        router.get('/newsong', function (req, res) {
+            console.log('Query random song from song collection');
+            _this.Songs.retrieveRandom(res);
+        });
         router.get('/users/:target/songs', function (req, res) {
             var target = req.params.target;
             console.log("Query all songs by: " + target);

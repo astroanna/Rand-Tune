@@ -1,6 +1,7 @@
 import Mongoose = require("mongoose");
 
 interface ISongModel extends Mongoose.Document {
+    _id: number;
     title: string;
     description: string;
     musician: string;

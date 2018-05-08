@@ -31,7 +31,7 @@ var ListenerModel = /** @class */ (function () {
     ListenerModel.prototype.retrieveListener = function (response, filter) {
         var query = this.model.find(filter);
         query.exec(function (err, itemArray) {
-            response.json(itemArray)._id;
+            response.json(itemArray);
         });
     };
     return ListenerModel;

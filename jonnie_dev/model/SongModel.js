@@ -11,6 +11,7 @@ var SongModel = /** @class */ (function () {
     }
     SongModel.prototype.createSchema = function () {
         this.schema = new Mongoose.Schema({
+            _id: Number,
             title: String,
             description: String,
             musician: String,
@@ -22,6 +23,13 @@ var SongModel = /** @class */ (function () {
     };
     SongModel.prototype.createModel = function () {
         this.model = mongooseConnection.model("Song", this.schema);
+    };
+    SongModel.prototype.retrieveRandom = function (res) {
+        var rand = Math.floor(Math.random() * 7) + 1;
+        var query = this.model.find({ _id: rand });
+        query.exec(function (err, item) {
+            res.json(item);
+        });
     };
     SongModel.prototype.retrieveAllSongs = function (response) {
         var query = this.model.find({});
