@@ -2,6 +2,7 @@ function initXHR(x, value) {
 	console.log(x);
 	if (x == 'songs') {
 		//retrieveActiveListsFromServer('/app/songs', 'songs');
+		retrieveSongFromServer('/newsong')
  		document.getElementById("songs").style.display = "block";
 		document.getElementById("user").style.display = "none";
 	}
@@ -11,24 +12,40 @@ function initXHR(x, value) {
 		document.getElementById("user").style.display = "block";
 	}
 	else {
-		//retrieveActiveListsFromServer('/app/songs', 'songs');
 		document.getElementById("songs").style.display = "block";
 		document.getElementById("user").style.display = "none";
 	}
 }
 
-// function retrieveSongFromServer(url, operation) {
+function retrieveSongFromServer(url) {
+	var xmlhttp = new XMLHttpRequest();
+
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			var returnValues = JSON.parse(xmlhttp.responseText);
+			populateSongViews(returnValues);
+		}
+	}
+	xmlhttp.open("GET", url, true);
+	xmlhttp.send();
+}
+
+// function retrieveUserFromServer(url, operation) {
 // 	var xmlhttp = new XMLHttpRequest();
-//
+
 // 	xmlhttp.onreadystatechange = function() {
 // 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 // 			var returnValues = JSON.parse(xmlhttp.responseText);
-// 			populateSongViews('songs', returnValues);
+// 			populateSongViews('users', returnValues);
 // 		}
 // 	}
 // 	xmlhttp.open("GET", url, true);
 // 	xmlhttp.send();
 // }
+
+
+
+
 
 /*
 //DOM based function
@@ -80,10 +97,10 @@ function populateListItems2(elementId, list) {
 }*/
 
 //JQuery based function
-// function populateListItems(elementId, list) {
+// function populateUserItems(elementId, list) {
 // 	var listItems = list.tasks;
 // 	var newElement = "";
-//
+
 // 	for (var i = 0; i < listItems.length; i++) {
 // 		newElement += "<tr>";
 // 		newElement += "<td>" + listItems[i].description + "</td>";
@@ -99,3 +116,22 @@ function populateListItems2(elementId, list) {
 // 	}
 // 	$("#" + elementId).append(newElement);
 // }
+
+function populateSongItems(song) {
+	var songTitle = document.getElementById('song-title');
+	songTitle.innerHTML = song.title;
+
+	var songArtist = document.getElementById('song-artist');
+	songTitle.innerHTML = song.musician;
+
+	var songDesc = document.getElementById('song-desc');
+	songDesc.innerHTML = song.description;
+
+	var songAlbum = document.getElementById('song-album');
+	songAlbum.innerHTML = song.album;
+
+	//var oggSong = document.getElementById('ogg-src');
+	//oggSong.src = song.path;
+	var mp3Src = document.getElementById('mp3-src');
+	mp3Src.src = song.path;
+}

@@ -33,3 +33,11 @@ body {
 .row {
 	padding-top: 60px;
 }
+
+p#song-album {
+  display: inline-block;
+}
+
+h2#song-name {
+  display: inline-block;
+}
