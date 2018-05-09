@@ -99,7 +99,7 @@ listenerCollection.insert(
         _id: "alexajaide@gmail.com",
         username: "Musician_2",
         password: "hunter2",
-        bio: "hey i like to make",
+        bio: "hey i like to make music",
         f_name: "Alexa",
         l_name: "Jaide",
         email: "alexajaide@gmail.com",

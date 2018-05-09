@@ -10,6 +10,7 @@ class DataAccess {
     }
     
     static connect (): Mongoose.Connection {
+        // if already connected return connection
         if(this.mongooseInstance) return this.mongooseInstance;
         
         this.mongooseConnection  = Mongoose.connection;

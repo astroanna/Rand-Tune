@@ -54,11 +54,6 @@ var App = /** @class */ (function () {
             console.log("Query all review for user: " + target);
             _this.Reviews.retrieveReviewsForID(res, { user_id: target });
         });
-        router.get('/music/:artist/:song', function (req, res) {
-            var artist = req.params.artist;
-            var song = req.params.song;
-            res.send(req);
-        });
         /*router.post('/app/list/', (req, res) => {
             console.log(req.body);
             var jsonObj = req.body;
@@ -86,6 +81,7 @@ var App = /** @class */ (function () {
         this.expressApp.use('/', router);
         //this.expressApp.use('/app/json/', express.static(__dirname+'/app/json'));
         //this.expressApp.use('/images', express.static(__dirname+'/img'));
+        this.expressApp.use('/music', express.static(__dirname + '/music'));
         this.expressApp.use('/', express.static(__dirname + '/pages'));
     };
     return App;
