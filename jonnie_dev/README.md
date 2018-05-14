@@ -9,30 +9,32 @@ File content:
 
 Make sure you install the node.js server and Mongo DB sofware from the side.  Ensure your path variable contains the execution path of the node.js and mongo binary.
 
-To execute the server db and then the node server with the following commands:
+Before starting execute the following within the directory containing the app:
+
+npm install
+npm install mongodb
+npm install mongoose
+npm install plyr
+
+ensure App.ts and AppServer.ts have been compiled to JS, then execute the following commands:
 
 //create the db file directory
 0. md db
 
 //Starts the DB server on port 3000
-1. start.toDoSample.cmd
+1. start.db.cmd
 
-//populate the DB server with sample data
-2. startdbClient.toDoSample.cmd
->load ('createDB/createToDoSampleData.js');
+//Continue from a separate command line
+2. mongo --port 3000
 >load ('createDB/createAdminUser.js');
 >exit
 
-//install npm packages
-3. npm install
+3. startdbClient.admin.cmd
+>load ('createDB/populateDB.js');
+>exit
 
-//Compile Node/Express Server.  You may need to go to all subdirectories and compile the ts files.
-4. tsc AppServre.ts
+4. node AppServer.js 
 
-//Execute Node/Express server on port 8080
-5. node AppServer.js 
+//navigate to:
 
-To test server #3, try the following URL on the browser, while the server is running:
-* http://localhost:8080/
-* http://localhost:8080/app/list
-* http://localhost:8080/app/list/1
+http://localhost:8080/
