@@ -1,6 +1,8 @@
 This directory contains one express servers:
 * Server.js + App.js - Encapsulated Node/Express web server w/ Mongo Access
 
+Plyr: https://plyr.io/
+
 File content:
 * Server.ts - based http server
 * App.ts - express server
