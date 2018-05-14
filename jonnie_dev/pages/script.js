@@ -4,6 +4,9 @@ function initXHR(x, value) {
 		populatePage(null, 'songs');
  		document.getElementById("songs").style.display = "block";
 		document.getElementById("user").style.display = "none";
+		if(value == null) {
+			playerInit();
+		}
 	}
  	else if (x == 'user') {
 		populatePage(null, 'user')
@@ -106,4 +109,14 @@ function populatePage(object, param) {
 		userTwitter.href = 'http://' +object[0].twitter;
 	}
 	
+}
+
+function playerInit() {
+	//create a new Plyr object
+	const player = new Plyr(document.getElementById('player'), {
+		autopause: true,
+		seekTime: 15,
+		volume: 0.5,
+		muted: false
+	});
 }
