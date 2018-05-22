@@ -1,54 +1,4 @@
-<!--<nav class="navbar bg-secondary fixed-top nav-pills bg-light">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="/">
-			<div style="font-size: 2.5rem;
-			font-family: 'Monoton', cursive;
-			text-decoration: none;" class="logo">Rand()Tune</div>
-		</a>
-		<ul class="nav nav-pills text-white">
-			<li class="nav-item">
-				<a class="nav-link" routerLink="/">Home</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" routerLink="/newsong">New Song</a>
-			</li>
-			<!--<li class="nav-item dropdown">
-				<a href="/user" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore</a>
-				<ul class="dropdown-menu">
-					<a class="dropdown-item">Musicians</a>
-					<a class="dropdown-item">Artists</a>
-				</ul>
-			</li>
-			<div ngbDropdown class="d-inline-block">
-			  <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-			  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-				<button class="dropdown-item" routerLink="/newsong">Action - 1</button>
-				<button class="dropdown-item">Another Action</button>
-				<button class="dropdown-item">Something else is here</button>
-			  </div>
-			</div>
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Upload</a>
-				<div class="dropdown-menu">
-					<a class="dropdown-item">Music</a>
-					<a class="dropdown-item">Artwork</a>
-				</div>
-			</li>
-		</ul>
-		<ul class="nav nav-pills navbar-right">
-		<li class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
-			<div class="dropdown-menu dropdown-menu-right">
-				<a class="dropdown-item" href="javascript:initXHR('user', null)">My Profile</a>
-				<a class="dropdown-item">Settings</a>
-			</div>
-		</li>
-		</ul>
-	</div>
-</nav>-->
-
-
-<nav class="btn-sample navbar bg-secondary fixed-top nav-pills bg-light">
+<nav class="btn-custom navbar bg-secondary fixed-top nav-pills bg-light">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="/">
 			<div style="font-size: 2.5rem;
@@ -56,56 +6,34 @@
 			text-decoration: none;" class="logo">Rand()Tune</div>
 		</a>
 		<div class="btn-group mr-3">
-			<button type="button" class="btn btn-sample" routerLink="/">Home</button>
-			<button type="button" class="btn btn-sample" routerLink="/newsong">New Song</button>
-			<div class="btn-group btn-sample" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-				<button class="btn btn-sample" ngbDropdownToggle>Explore</button>
+			<button type="button" class="btn btn-custom" routerLink="/">Home</button>
+			<button type="button" class="btn btn-custom" routerLink="/newsong">New Song</button>
+			<div class="btn-group btn-custom" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+				<button class="btn btn-custom" ngbDropdownToggle>Explore</button>
 				<div class="dropdown-menu" ngbDropdownMenu>
-					<button class="dropdown-item btn-sample">Musicians</button>
-					<button class="dropdown-item btn-sample">Artists</button>
+					<button class="dropdown-item btn-custom">Musicians</button>
+					<button class="dropdown-item btn-custom">Artists</button>
 				</div>
 			</div>
-			<div class="btn-group btn-sample" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-				<button class="btn btn-sample" ngbDropdownToggle>Upload</button>
+			<div class="btn-group btn-custom" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+				<button class="btn btn-custom" ngbDropdownToggle>Upload</button>
 				<div class="dropdown-menu" ngbDropdownMenu>
-					<button class="dropdown-item btn-sample">Music</button>
-					<button class="dropdown-item btn-sample">Artwork</button>
+					<button class="dropdown-item btn-custom">Music</button>
+					<button class="dropdown-item btn-custom">Artwork</button>
 				</div>
 			</div>
 		</div>
 		<div class="btn-group mr-3">
-			<div class="btn-group btn-sample" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-				<button class="btn btn-sample" ngbDropdownToggle>Login</button>
-				<div class="dropdown-menu" ngbDropdownMenu>
-					<button class="dropdown-item btn-sample">My Profile</button>
-					<button class="dropdown-item btn-sample">Settings</button>
+			<div class="btn-group btn-custom" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+				<button class="btn btn-custom" ngbDropdownToggle>Login</button>
+				<div class="dropdown-menu-right" ngbDropdownMenu>
+					<button class="dropdown-item btn-custom" routerLink="/user">My Profile</button>
+					<button class="dropdown-item btn-custom">Settings</button>
+					<button class="dropdown-item btn-custom">History</button>
+					<button class="dropdown-item btn-custom">Logout</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </nav>
-
-<!--<div class="row">
-  <div class="col">
-    <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <button class="dropdown-item" routerLink="/newsong">Action - 1</button>
-        <button class="dropdown-item">Another Action</button>
-        <button class="dropdown-item">Something else is here</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="col text-right">
-    <div ngbDropdown placement="top-right" class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownBasic2" ngbDropdownToggle>Toggle dropup</button>
-      <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-        <button class="dropdown-item">Action - 1</button>
-        <button class="dropdown-item">Another Action</button>
-        <button class="dropdown-item">Something else is here</button>
-      </div>
-    </div>
-  </div>
-</div>-->
             

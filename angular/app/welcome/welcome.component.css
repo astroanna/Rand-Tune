@@ -1,25 +1,50 @@
-.navbar {
-  background-color: #541388 !important;
-}
-.navbar .navbar-brand {
-  color: #ffffff !important;
-}
-.navbar .navbar-brand:hover,
-.navbar .navbar-brand:focus {
-  color: #ffffff !important;
+.user-info {
+	padding-top: 60px;
 }
 
-.navbar .navbar-nav .nav-link {
-  border-radius: .25rem !important;
-  margin: 0 0.25em !important;
+body {
+  padding-top: 60px;
 }
 
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
-  color: #541388 !important;
+.sidebar {
+    padding-top: 60px;
 }
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-  color: #541388 !important;
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 60px;
+  }
+}
+
+.container {
+	padding-top: 60px;
+}
+
+.musician-image {
+	width: auto;
+	height: auto;
+	position: relative;
+}
+
+.user-profile {
+	padding-top: 60px;
+}
+
+.row {
+	padding-top: 60px;
+}
+
+h1 {
+	font-size: 10rem;
+	font-family: 'Monoton', cursive;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+.btn-custom {
+	width: 75%;
 }
 
 .btn-custom { 
@@ -66,13 +91,4 @@ fieldset[disabled] .btn-custom.active {
 .btn-custom .badge { 
   color: #541388; 
   background-color: #541388; 
-}
-
-.navbar .dropdown-menu {
-	background-color: #541388 !important;
-}
-
-.dropdown-menu-right { 
-    right: 0 !important; 
-    left: auto !important; 
 }
