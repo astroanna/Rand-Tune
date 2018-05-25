@@ -1,13 +1,14 @@
 import Mongoose = require("mongoose");
 
 interface ISongModel extends Mongoose.Document {
-    _id: number;
+    // Public song info
     title: string;
     description: string;
-    musician: string;
     album: string;
     genre: string;
+    
+    musician: string;
     review_count: number;
-    path: string;
+    mp3_id: string;
 }
 export {ISongModel};

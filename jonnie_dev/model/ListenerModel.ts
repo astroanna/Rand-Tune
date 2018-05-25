@@ -27,9 +27,7 @@ class ListenerModel {
                 phone: String,
                 facebook: String,
                 twitter: String,
-                balance: Number,
-                is_musician: Boolean,
-                is_artist: Boolean
+                balance: Number
             }, {collection: 'listeners'}
         );
     }
